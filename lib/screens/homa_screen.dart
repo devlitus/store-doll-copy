@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_dolls/screens/amigurumi_sccreen.dart';
 import 'package:store_dolls/widgets/card_home.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,12 +11,22 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(children: [
-          Center(
-            child: CardHome(
-              size: size,
-              title: 'Amigurumi',
-              image: 'images/amigurumi.jpg',
+          GestureDetector(
+            child: Center(
+              child: CardHome(
+                size: size,
+                title: 'Amigurumi',
+                image: 'images/amigurumi.jpg',
+              ),
             ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AmirugumiScreen(),
+                ),
+              );
+            },
           ),
           const SizedBox(height: 20),
           Center(
