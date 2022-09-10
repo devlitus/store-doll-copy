@@ -1,8 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:store_dolls/screens/homa_screen.dart';
 
+import 'firebase_options.dart';
+
 void main() {
   runApp(const MyApp());
+}
+
+void initConfigFirebase() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class MyApp extends StatelessWidget {
