@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "641882597851",
+    "project_id": "store-doll",
+    "storage_bucket": "store-doll.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641882597851:android:32e38d281df7fa9a9e9ffe",
+        "android_client_info": {
+          "package_name": "com.example.store_dolls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641882597851-a49n5dneqm3c6chekofs1lgv2nr6h7q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbsOqRlTU3o_EbCLUNoHhwjdKLyqzGXSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641882597851-a49n5dneqm3c6chekofs1lgv2nr6h7q3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641882597851-ooueuo27uhccogusgb3bok2rl5mvfd1p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.storeDolls"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
