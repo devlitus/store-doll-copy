@@ -4,15 +4,15 @@ import 'package:store_dolls/screens/homa_screen.dart';
 
 import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-void initConfigFirebase() async {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  runApp(const MyApp());
 }
+
+void initConfigFirebase() async {}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
