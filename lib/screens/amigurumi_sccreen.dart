@@ -12,7 +12,7 @@ class AmirugumiScreen extends StatelessWidget {
             future: FirebaseService().getImage(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                print('snapshot ${snapshot.data}');
+                debugPrint("snapshot: ${snapshot.data['url']}");
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -82,7 +82,7 @@ class AmirugumiScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  itemCount: 6,
+                  itemCount: snapshot.data.length,
                 );
               }
               return const Center(

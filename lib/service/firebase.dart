@@ -4,10 +4,9 @@ class FirebaseService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   Future getImage() async {
     final QuerySnapshot result = await _db.collection('images').get();
-    final List<DocumentSnapshot> documents = result.docs.toList();
-    for (var element in documents) {
-      print('element ${element.data()}');
-    }
-    return documents;
+    final List<DocumentSnapshot> documents = result.docs;
+    final items = documents.map((e) => e.data());
+    return items;
+    // return documents;
   }
 }
