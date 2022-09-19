@@ -4,7 +4,7 @@ import 'package:store_dolls/widgets/card_home.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
+  static const String routeName = '/home';
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
@@ -20,12 +20,17 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(
-                context,
+              Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const AmirugumiScreen(),
                 ),
               );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const AmirugumiScreen(),
+              //   ),
+              // );
             },
           ),
           const SizedBox(height: 20),

@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:store_dolls/screens/homa_screen.dart';
+import 'package:store_dolls/screens/home_screen.dart';
 import 'package:store_dolls/theme/theme_dark.dart';
 
 import 'firebase_options.dart';
