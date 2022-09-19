@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_dolls/service/firebase.dart';
+import 'package:store_dolls/widgets/lsit_amigurumi.dart';
 
 class AmirugumiScreen extends StatelessWidget {
   const AmirugumiScreen({super.key});
@@ -7,90 +7,29 @@ class AmirugumiScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder(
-            future: FirebaseService().getImage(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                debugPrint("snapshot: ${snapshot.data['url']}");
-                return GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 0.74,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 200,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    fit: BoxFit.contain,
-                                    image: Image.network(
-                                      'https://res.cloudinary.com/djhxmjnb4/image/upload/v1662274986/amigurumi/zetfmvxns1gseopf3lh3.jpg',
-                                      fit: BoxFit.contain,
-                                    ).image,
-                                  ),
-                                ),
-                                child: null,
-                              ),
-                              const Positioned(
-                                top: 0,
-                                left: 5,
-                                child: IconButton(
-                                  iconSize: 40,
-                                  onPressed: null,
-                                  icon: Icon(
-                                    Icons.favorite_border,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              const Text(
-                                'KIKI',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.remove_red_eye_outlined,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: snapshot.data.length,
-                );
-              }
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }),
+      body: const SafeArea(
+        child: ListAmigurumi(),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
 }
-// 'https://res.cloudinary.com/djhxmjnb4/image/upload/v1662274986/amigurumi/zetfmvxns1gseopf3lh3.jpg'
